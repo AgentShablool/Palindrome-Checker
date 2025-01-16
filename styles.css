@@ -1,0 +1,115 @@
+:root {
+  --blue-50: #eff6ff;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-900: #1e3a8a;
+  --blue-950: #172554;
+  --border-color: #000;
+  --text-color: #000;
+}
+
+* {
+  font-family: 'Mali', cursive;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-300);
+  font-size: clamp(16px, 2vw, 24px); /* Responsive font size */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  background-color: var(--blue-900);
+  background-image: linear-gradient(to top, var(--blue-900), #1d4ed8);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  min-width: 250px;
+  max-width: 50vw;
+  min-height: 200px;
+  max-height: 70vh;
+  color: var(--blue-50);
+  padding: 1rem;
+  overflow: auto; /* Ensure content inside can scroll if necessary */
+}
+
+.container h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.container button {
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  color: var(--text-color);
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.container input,
+.container #result {
+  padding: 0.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  width: 100%; /* Ensure it takes up full available width */
+}
+
+.container input {
+  max-width: 100%;
+}
+
+#result {
+  background-color: var(--blue-400);
+  white-space: normal; /* Correct text wrapping */
+  max-width: 100%;
+  word-wrap: break-word; /* Ensure text breaks if it's too long */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    min-width: 200px;
+    padding: 0.5rem;
+  }
+  .container h1 {
+    font-size: 1.2rem;
+  }
+  .container button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-width: 150px;
+    padding: 0.5rem;
+  }
+  .container h1 {
+    font-size: 1rem;
+  }
+  .container button {
+    font-size: 0.8rem;
+  }
+}
